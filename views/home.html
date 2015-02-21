@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+{{template "header"}}
+
+  <body>
+{{template "navbar".}}
+      <br><br>
+      <div class="container">
+        <div class="col-md-3">
+          <br>
+          <h5>分类列表</h5>
+          <ul>
+          {{range .Categories}}
+          <li><a href="/?cid={{.Id}}">{{.Title}}</a></li>
+          {{end}}
+        </ul>
+        </div>
+        <div class="col-md-9">
+          <div class="page-header">
+            {{range .Topics}}
+              <h1>{{.Title}}</h1>
+              <h6 class="text-muted">发表于 {{.Created}}最后修改于{{.Updated}} </h6>
+              <p>{{.Content}}<br>
+              <p>
+            {{end}}
+          </div>
+        </div>
+      </div>
+     
+  </body>
+</html>
